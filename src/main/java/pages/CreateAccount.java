@@ -9,6 +9,7 @@ public class CreateAccount extends Page {
    By byemail =  By.id("email_create");
    By accountBtn = By.cssSelector("#SubmitCreate > span");
    By invalidEmail = By.cssSelector("ol > li");
+
     public WebElement getCreateAccountForm() {
         return Utils.waitForElementPresence(driver, By.id("create-account_form"), 30);
     }
@@ -40,6 +41,7 @@ public WebElement getCreatAccountBtn(){
     public RegistrationFormPage goToRegistrationForm(){
         return new RegistrationFormPage();
     }
+
 
 
 }

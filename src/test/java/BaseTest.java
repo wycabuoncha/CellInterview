@@ -11,6 +11,7 @@ import org.testng.annotations.BeforeClass;
 import org.testng.annotations.BeforeTest;
 import pages.CreateAccount;
 import pages.Page;
+import pages.RegistrationFormPage;
 import utils.Utils;
 
 
@@ -19,6 +20,7 @@ public class BaseTest {
     private static WebDriver webDriver;
     protected static Page basePage;
     protected static CreateAccount createAccount;
+    protected static RegistrationFormPage registrationFormPage;
    static By css = By.cssSelector("css=.logo");
 
     private static final String APP_URL = "http://automationpractice.com/index.php";
@@ -31,19 +33,10 @@ public class BaseTest {
         basePage = new Page();
         createAccount = new CreateAccount();
         basePage.setWebDriver(webDriver);
+        registrationFormPage = new RegistrationFormPage();
+
     }
 
-    @BeforeTest
-    public static void startOfTest(){
-        System.out.println("STARTING TEST...");
-    }
-
-    @AfterTest
-    public static void Refresh(){
-
-        WebElement element = Utils.waitForElementPresence(webDriver,css, 30 );
-        element.click();
-    }
 
     @AfterClass
     public static void closeBrowser(){
