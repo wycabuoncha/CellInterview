@@ -39,11 +39,13 @@ public class SignupTests extends BaseTest {
         //createAccount.getEmailHighlightedGreen().isDisplayed();
         createAccount.goToRegistrationForm();
 
+
     }
 
     @Test(priority = 5)
-    public void Fill_In_Registration_Form(){
-
+    public void Fill_In_Registration_Form() throws InterruptedException {
+        System.out.println("Iam here not");
+       //createAccount.fill();
     }
     //Filling personal information fields
 

@@ -51,7 +51,7 @@ public class RegistrationFormPage {
 
     //SETTERS
     public void setCustomerFirstNameField(String firstName) {
-        getCustomerFirstNameField().clear();
+        //getCustomerFirstNameField().clear();
         getCustomerFirstNameField().sendKeys(firstName);
     }
 
@@ -78,8 +78,26 @@ public class RegistrationFormPage {
     }
 
 
-    public void registration() throws InterruptedException {
+    public void  fill() throws InterruptedException {
+        driver.findElement(By.linkText("Sign in")).click();
 
+
+
+        driver.findElement(By.id("email_create")).sendKeys("oncharrvhhjgggruigg0071@onch.com");
+        driver.findElement(By.cssSelector("#SubmitCreate > span")).click();
+        Thread.sleep(3000);
+        //driver.findElement(By.id("id_gender1")).click();
+
+        By customerFirstname = By.id("customer_firstname");
+        WebElement element = Utils.waitForElementPresence(driver,customerFirstname,30);
+
+        element.sendKeys("Arrgsugfhfehhlu");
+        driver.findElement(By.id("customer_lastname")).sendKeys("Makori");
+
+        driver.findElement(By.id("passwd")).sendKeys("1234567890");
+
+
+        dateOfBirth();
 
 
 
@@ -120,6 +138,15 @@ public class RegistrationFormPage {
         //assertThat(driver.findElement(By.cssSelector(".account > span")).getText(), is("Dennis Makori"));
         driver.findElement(By.linkText("Sign out")).click();
         driver.findElement(By.cssSelector(".logo")).click();
+    }
+
+    public void dateOfBirth(){
+        Select date = new Select(driver.findElement(By.id("days")));
+        Select month = new Select(driver.findElement(By.id("months")));
+        Select year = new Select(driver.findElement(By.id("years")));
+        date.selectByValue("1");
+        month.selectByValue("12");
+        year.selectByValue("2005");
     }
 
 

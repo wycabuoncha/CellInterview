@@ -43,6 +43,8 @@ public class RegistrationTest {
     driver.manage().window().setSize(new Dimension(1382, 744));
     Thread.sleep(3000);
     driver.findElement(By.linkText("Sign in")).click();
+
+
     //assertThat(driver.findElement(By.cssSelector("#create-account_form > .page-subheading")).getText(), is("CREATE AN ACCOUNT"));
     //assertThat(driver.findElement(By.cssSelector(".form_content > p:nth-child(1)")).getText(), is("Please enter your email address to create an account."));
     {
@@ -51,7 +53,7 @@ public class RegistrationTest {
       builder.moveToElement(element).perform();
     }
     Thread.sleep(3000);
-    driver.findElement(By.id("email_create")).sendKeys("oncharrvgrui0071@onch.com");
+    driver.findElement(By.id("email_create")).sendKeys("oncharrvhgrui0071@onch.com");
 
 
     driver.findElement(By.cssSelector("#SubmitCreate > span")).click();
@@ -65,7 +67,7 @@ public class RegistrationTest {
     By customerFirstname = By.id("customer_firstname");
     WebElement element = Utils.waitForElementPresence(driver,customerFirstname,30);
 
-    element.sendKeys("Arrbeehhlu");
+    element.sendKeys("Arrhgfehhlu");
     driver.findElement(By.id("customer_lastname")).sendKeys("Makori");
 
     driver.findElement(By.id("passwd")).sendKeys("1234567890");

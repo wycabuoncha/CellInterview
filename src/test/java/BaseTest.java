@@ -21,7 +21,7 @@ public class BaseTest {
     protected static Page basePage;
     protected static CreateAccount createAccount;
     protected static RegistrationFormPage registrationFormPage;
-   static By css = By.cssSelector("css=.logo");
+    static By css = By.cssSelector("css=.logo");
 
     private static final String APP_URL = "http://automationpractice.com/index.php";
 
