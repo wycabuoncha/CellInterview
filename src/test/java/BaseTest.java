@@ -2,44 +2,55 @@
 import io.github.bonigarcia.wdm.WebDriverManager;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 
 import org.testng.annotations.AfterClass;
-import org.testng.annotations.AfterTest;
 import org.testng.annotations.BeforeClass;
-import org.testng.annotations.BeforeTest;
-import pages.CreateAccount;
-import pages.Page;
-import pages.RegistrationFormPage;
-import utils.Utils;
+import pages.*;
 
 
 public class BaseTest {
 
-    private static WebDriver webDriver;
-    protected static Page basePage;
-    protected static CreateAccount createAccount;
-    protected static RegistrationFormPage registrationFormPage;
+    static WebDriver webDriver;
+    static Page basePage;
+    static CreateAccountFormPage createAccount;
+    static CreateAccount_SignInPage createAccount_SignIn;
+    static LoggedInPage loggedInpage;
+    static CreateAccount_SignInPage createAccount_signIn;
+    static HomePage homePage;
     static By css = By.cssSelector("css=.logo");
+    static Account account;
+
+
+
 
     private static final String APP_URL = "http://automationpractice.com/index.php";
+
+
 
     @BeforeClass
     public static void launchApplication(){
         setChromeDriverProperty();
         webDriver = new ChromeDriver();
         webDriver.get(APP_URL);
+        webDriver.manage().window().maximize();
+         account = new Account();
         basePage = new Page();
-        createAccount = new CreateAccount();
+        createAccount_SignIn = new CreateAccount_SignInPage();
+        homePage = new HomePage();
+        createAccount = new CreateAccountFormPage();
         basePage.setWebDriver(webDriver);
-        registrationFormPage = new RegistrationFormPage();
+        loggedInpage = new LoggedInPage();
 
     }
 
 
     @AfterClass
-    public static void closeBrowser(){
+    public static void close_All()
+    {
+        //logout
+        // account.getAccountLogout().click();
+        //quit the browser
         webDriver.quit();
     }
 

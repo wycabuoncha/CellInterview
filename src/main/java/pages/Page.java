@@ -2,6 +2,8 @@ package pages;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
+import utils.Utils;
 
 public class Page {
 
@@ -11,9 +13,7 @@ public class Page {
         Page.driver = driver;
     }
 
-    public SignupLoginPage clickSignInLink() {
 
-        driver.findElement(By.linkText("Sign in")).click();
-        return new SignupLoginPage();
-    }
+
+
 }

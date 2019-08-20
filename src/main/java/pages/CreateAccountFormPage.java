@@ -6,12 +6,15 @@ import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.Select;
 import org.openqa.selenium.support.ui.WebDriverWait;
+import sun.nio.ch.Util;
+import utils.Constants;
 import utils.Utils;
 
-public class CreateAccount extends Page {
+public class CreateAccountFormPage extends Page {
 
-   private By byemail =  By.id("email_create");
-   private By accountBtn = By.cssSelector("#SubmitCreate > span");
+    //By Web element locators
+
+
    private By invalidEmail = By.cssSelector("ol > li");
    private By customerFirstname = By.id("customer_firstname");
    private By lName = By.id("customer_lastname");
@@ -21,7 +24,7 @@ public class CreateAccount extends Page {
    private By byYr = By.id("years");
    private By newsletter = By.id("newsletter");
    private By alert = By.id("optin");
-   private By company = By.id("company");
+   private By company = By.name("company");
    private By address1 = By.id("address1");
    private By address2 = By.id("address2");
    private By city = By.id("city");
@@ -29,26 +32,22 @@ public class CreateAccount extends Page {
    private By postcode = By.id("postcode");
    private By other = By.id("other");
    private By alias = By.id("alias");
+   private By registeredMessage = By.cssSelector("css=ol > li");
+   private By submitBtn = By.cssSelector("#submitAccount > span");
+   private By homephone = By.id("phone");
+   private By mobilePhone  = By.id("phone_mobile");
+   private By state1 = By.id("id_state");
 
-   public WebElement getCreateAccountForm() {
-        return Utils.waitForElementPresence(driver, By.id("create-account_form"), 30);
-   }
+    private By sigInForm = By.id("id=login_form");
 
-public void setCreateAccountEmailField(String email){
-        Utils.findMyElement(byemail).sendKeys(email);
-}
 
-public String fetchTextBoxValue(){
-       return Utils.getTextBoxValue(byemail);
-}
 
-public WebElement getEmailAddressField(){
-        return Utils.waitForElementPresence(driver, byemail, 30);
-}
 
-public WebElement getCreatAccountBtn(){
-    return Utils.waitForElementPresence(driver,accountBtn,30)  ;
-}
+
+
+
+
+
 
 
 public void dateOfBirth(){
@@ -63,19 +62,17 @@ public void dateOfBirth(){
         return Utils.waitForElementPresence(driver, By.xpath("//div[@class=\"required form-group form-ok\"]//input[@id=\"email\"]"), 30);
     }
 
-    public WebElement getInvalidEmailText(){
-        return Utils.waitForElementPresence(driver,invalidEmail,30);
-    }
-
-
-
-    public RegistrationFormPage goToRegistrationForm(){
-        System.out.println("GOing to create account page");
-        return new RegistrationFormPage();
-    }
 
 
     //GETTERS
+    public WebElement getCustomerTitleMr() {
+        return Utils.waitToBeClickable(driver, By.id("uniform-id_gender1"), 30);
+    }
+
+    public WebElement getCustomerTitleMrs() {
+        return Utils.waitToBeClickable(driver, By.id("uniform-id_gender2"), 30);
+    }
+
     public WebElement getCustomerFirstNameField()
     {
         return Utils.waitForElementPresence(driver, customerFirstname, 30);
@@ -125,6 +122,7 @@ public void dateOfBirth(){
         return Utils.waitForElementPresence(driver,address2,30);
     }
 
+
     public WebElement getSelectState(){
         return Utils.waitForElementPresence(driver,country,30);
     }
@@ -150,9 +148,37 @@ public void dateOfBirth(){
         return Utils.waitForElementPresence(driver,alias,30);
     }
 
+    public WebElement getSubmitBtn() {
+        return Utils.waitForElementPresence(driver,submitBtn, 30);
+    }
+
+    public LoggedInPage submitClick(){
+        getSubmitBtn().click();
+
+        return  new LoggedInPage();
+    }
+
+    private WebElement getHomePhone() {
+       return Utils.waitForElementPresence(driver,homephone, 30);
+    }
+
+    private WebElement getMobilePhone() {
+        return Utils.waitForElementPresence(driver,mobilePhone, 30);
+    }
+
 
 
     //SETTERS
+
+
+    public void setCustomerTitleMr() {
+        this.getCustomerTitleMr().click();
+    }
+
+    public void setCustomerTitleMrs() {
+        this.getCustomerTitleMrs().click();
+    }
+
     public void setCustomerFirstNameField(String firstName) {
        System.out.println("Entering customer first name ....");
         getCustomerFirstNameField().sendKeys(firstName);
@@ -175,9 +201,6 @@ public void dateOfBirth(){
     public void setCustomerDateOfBirthYear(String year){
         selectCustomerDateOfBirthYear().selectByValue(year);
     }
-
-
-
     public void setNewsletter(){
          getNewsletter().click();
     }
@@ -197,11 +220,28 @@ public void dateOfBirth(){
        getAddress2().sendKeys(address2);
     }
 
-    public void selectState(String state) {
-        Select myState = new Select(getSelectState());
-        myState.selectByValue(state);
 
+///////////////////////////////////////
+    public Select selectState() {
+        WebElement state = Utils.waitForElementPresence(driver, By.id("id_state"), 30);
+        return new Select(state);
     }
+
+    public void selectState(String state) {
+        Select selectState = this.selectState();
+        selectState.selectByValue(state);
+    }
+    public Select selectCountry() {
+        WebElement country = Utils.waitForElementPresence(driver, By.id("id_country"), 30);
+        return new Select(country);
+    }
+
+    public void selectCountry(String country) {
+        Select selectCountry = this.selectCountry();
+        selectCountry.selectByVisibleText(country);
+    }
+
+    ///////////////////////////////
 
     public void setCityName(String cityName) {
         getCityName().sendKeys(cityName);
@@ -217,13 +257,40 @@ public void dateOfBirth(){
         myState.selectByValue(united_stated);
     }
 
+
+
+    public void setHomePhone(String homePhone) {
+         getHomePhone().sendKeys(homePhone);
+    }
+
+
+
+
+    public void setMobilePhone(String mobilePhone) {
+        getMobilePhone().sendKeys(mobilePhone);
+    }
+
+
+
     public void setAdditionalInformation(String message) {
-       getAdditionalInformation().sendKeys();
+       getAdditionalInformation().sendKeys(message);
     }
 
     public void setAddressAlias(String addressAlias) {
         getmyAddressAlias().sendKeys(addressAlias);
     }
+
+
+    //ERRORs
+    public WebElement getEmailBeenRegistered() {
+        return Utils.waitForElementPresence(driver, By.xpath("//li[contains(text(), \"An account using this email\")]"), 30);
+    }
+
+
+    public WebElement successfullyCreatedAccount() {
+        return Utils.waitForElementPresence(driver, By.xpath("//p[contains(text(), \"Welcome to your account.\")]"), 30);
+    }
+
 
 
 }
