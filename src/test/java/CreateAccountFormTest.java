@@ -1,5 +1,6 @@
 import org.testng.Assert;
 import org.testng.annotations.Test;
+import pages.LoggedInPage;
 import utils.Constants;
 import utils.Utils;
 
@@ -31,29 +32,30 @@ public class CreateAccountFormTest extends BaseTest {
         createAccount_SignIn.setCreateAccountEmailField(Constants.BLANK_EMAIL);
         createAccount_SignIn.getCreatAccountBtn().click();
         Assert.assertTrue(createAccount_SignIn.getEmailErrorMessage().isDisplayed());
+    }
 
+
+    //Wrong email format
+    @Test(priority = 4)
+    public void createAccountWithInvalidEmailAddress(){
+        createAccount_SignIn.setCreateAccountEmailField(Constants.IN_VALID_EMAIL);
+        createAccount_SignIn.getCreatAccountBtn().click();
+
+        Assert.assertTrue(createAccount_SignIn.getEmailErrorMessage().isDisplayed());
+        Assert.assertTrue(createAccount_SignIn.getEmailFieldHighlightedRed().isDisplayed());
     }
 
     //Valid email format
-    @Test(priority = 4)
+    @Test(priority = 5)
     public void createAccountWithValidEmailAddress(){
-
+        createAccount_SignIn.getEmailAddressField().clear();
         createAccount_SignIn.setCreateAccountEmailField(Constants.VALID_EMAIL);
-        try {
-            Thread.sleep(3000);
-        } catch (InterruptedException e) {
-            e.printStackTrace();
-        }
-
-
-
-
         createAccount_SignIn.getCreatAccountBtn().click();
-
+       //Assert.assertTrue(createAccount.getAccountCreationForm().isDisplayed());
     }
 
 
-    //@Test(priority = 3, dependsOnMethods = "authenticationPage" )
+    @Test(priority = 6 )
     public void createAccountFormSuccessfully(){
         System.out.println("Fill in Registration information ...");
         createAccount.setCustomerTitleMr();
@@ -78,7 +80,15 @@ public class CreateAccountFormTest extends BaseTest {
         createAccount.submitClick();
         Assert.assertTrue(createAccount.successfullyCreatedAccount().isDisplayed());
     }
-   }
+
+    @Test(priority = 7)
+    public void logout(){
+        account.getAccountLogout().click();
+    }
+
+
+
+}
 
 
 

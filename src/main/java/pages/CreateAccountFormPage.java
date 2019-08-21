@@ -39,18 +39,10 @@ public class CreateAccountFormPage extends Page {
    private By state1 = By.id("id_state");
 
     private By sigInForm = By.id("id=login_form");
+    private By accountCreationForm = By.id("account-creation_form");
 
 
-
-
-
-
-
-
-
-
-
-public void dateOfBirth(){
+    public void dateOfBirth(){
     Select date = new Select(driver.findElement(By.id("days")));
     Select month = new Select(driver.findElement(By.id("months")));
     Select year = new Select(driver.findElement(By.id("years")));
@@ -65,6 +57,10 @@ public void dateOfBirth(){
 
 
     //GETTERS
+    public WebElement getAccountCreationForm() {
+        return Utils.waitForElementPresence(driver, accountCreationForm, 30);
+    }
+
     public WebElement getCustomerTitleMr() {
         return Utils.waitToBeClickable(driver, By.id("uniform-id_gender1"), 30);
     }
