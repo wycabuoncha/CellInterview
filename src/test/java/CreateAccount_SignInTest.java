@@ -4,9 +4,6 @@ import utils.Constants;
 
 public class CreateAccount_SignInTest extends BaseTest{
 
-
-
-
     @Test(priority = 2)
     public void authenticationPage() {
         //check if email field has been displayed

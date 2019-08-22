@@ -4,6 +4,7 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 
+import org.openqa.selenium.interactions.Actions;
 import org.testng.annotations.AfterClass;
 import org.testng.annotations.BeforeClass;
 import pages.*;
@@ -20,8 +21,8 @@ public class BaseTest {
     static HomePage homePage;
     static By css = By.cssSelector("css=.logo");
     static Account account;
-
-
+    static ClothesPages clothes;
+    static Actions action;
 
 
     private static final String APP_URL = "http://automationpractice.com/index.php";
@@ -41,6 +42,8 @@ public class BaseTest {
         createAccount = new CreateAccountFormPage();
         basePage.setWebDriver(webDriver);
         loggedInpage = new LoggedInPage();
+        clothes = new ClothesPages();
+        action = new Actions(webDriver);
 
     }
 

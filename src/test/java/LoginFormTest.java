@@ -17,7 +17,7 @@
         import org.openqa.selenium.By;
         import org.testng.Assert;
         import org.testng.annotations.Test;
-    public class LoginTest  extends BaseTest {
+    public class LoginFormTest  extends BaseTest {
 
 
         //all required elements to login are available
