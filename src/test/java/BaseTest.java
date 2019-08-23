@@ -23,7 +23,7 @@ public class BaseTest {
     static Account account;
     static ClothesPages clothes;
     static Actions action;
-
+    static ShoppingActions shoppingCartAction;
 
     private static final String APP_URL = "http://automationpractice.com/index.php";
 
@@ -44,6 +44,7 @@ public class BaseTest {
         loggedInpage = new LoggedInPage();
         clothes = new ClothesPages();
         action = new Actions(webDriver);
+        shoppingCartAction = new ShoppingActions();
 
     }
 
