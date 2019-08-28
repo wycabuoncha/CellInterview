@@ -2,7 +2,8 @@
 <suite name="CellulantInterview">
     <test name="CellulantInterview">
         <classes>
-            <class name="SignupTests" />
+            <class name="CreateAccountFormTest" />
+            <class name="LoginTest"></class>
         </classes>
     </test>
 </suite>
