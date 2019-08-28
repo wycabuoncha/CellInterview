@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testng-results ignored="0" total="7" passed="7" failed="0" skipped="0">
+  <reporter-output>
+  </reporter-output>
+  <suite started-at="2019-08-28T12:02:02Z" name="Authentication" finished-at="2019-08-28T12:02:33Z" duration-ms="30493">
+    <groups>
+    </groups>
+    <test started-at="2019-08-28T12:02:02Z" name="Test1" finished-at="2019-08-28T12:02:33Z" duration-ms="30493">
+      <class name="LoginFormTest">
+        <test-method is-config="true" signature="launchApplication()[pri:0, instance:LoginFormTest@2bfb583b]" started-at="2019-08-28T12:02:02Z" name="launchApplication" finished-at="2019-08-28T12:02:19Z" duration-ms="16695" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- launchApplication -->
+        <test-method signature="allRequiredElementsAreDisplayed()[pri:1, instance:LoginFormTest@2bfb583b]" started-at="2019-08-28T12:02:19Z" name="allRequiredElementsAreDisplayed" finished-at="2019-08-28T12:02:21Z" duration-ms="2279" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- allRequiredElementsAreDisplayed -->
+        <test-method signature="loginWithValidCredentials(java.lang.String, java.lang.String)[pri:2, instance:LoginFormTest@2bfb583b]" started-at="2019-08-28T12:02:21Z" name="loginWithValidCredentials" finished-at="2019-08-28T12:02:25Z" duration-ms="3906" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[onchari1010@gmail.com]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[28328719]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- loginWithValidCredentials -->
+        <test-method signature="loginWith_Incorrect_Username(java.lang.String, java.lang.String)[pri:3, instance:LoginFormTest@2bfb583b]" started-at="2019-08-28T12:02:25Z" name="loginWith_Incorrect_Username" finished-at="2019-08-28T12:02:26Z" duration-ms="1432" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[onchari101000@gmail.com]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[28328719]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- loginWith_Incorrect_Username -->
+        <test-method signature="loginWith_Incorrect_PassWord(java.lang.String, java.lang.String)[pri:4, instance:LoginFormTest@2bfb583b]" started-at="2019-08-28T12:02:26Z" name="loginWith_Incorrect_PassWord" finished-at="2019-08-28T12:02:28Z" duration-ms="1313" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[onchari1010@gmail.com]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[28328719445]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- loginWith_Incorrect_PassWord -->
+        <test-method signature="loginWith_Invalid_Email_Address()[pri:5, instance:LoginFormTest@2bfb583b]" started-at="2019-08-28T12:02:28Z" name="loginWith_Invalid_Email_Address" finished-at="2019-08-28T12:02:29Z" duration-ms="1288" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- loginWith_Invalid_Email_Address -->
+        <test-method signature="loginWith_Blank_EmailAddress()[pri:6, instance:LoginFormTest@2bfb583b]" started-at="2019-08-28T12:02:29Z" name="loginWith_Blank_EmailAddress" finished-at="2019-08-28T12:02:31Z" duration-ms="1446" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- loginWith_Blank_EmailAddress -->
+        <test-method signature="loginWith_Blank_Password()[pri:7, instance:LoginFormTest@2bfb583b]" started-at="2019-08-28T12:02:31Z" name="loginWith_Blank_Password" finished-at="2019-08-28T12:02:32Z" duration-ms="1504" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- loginWith_Blank_Password -->
+        <test-method is-config="true" signature="close_All()[pri:0, instance:LoginFormTest@2bfb583b]" started-at="2019-08-28T12:02:32Z" name="close_All" finished-at="2019-08-28T12:02:33Z" duration-ms="596" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- close_All -->
+      </class> <!-- LoginFormTest -->
+    </test> <!-- Test1 -->
+  </suite> <!-- Authentication -->
+</testng-results>

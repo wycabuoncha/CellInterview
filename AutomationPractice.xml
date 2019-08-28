@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<suite name="Authentication" parallel="false">
+
+
+
+
+    <test name="Test1">
+    <parameter name="baseUrl" value="http://automationpractice.com/index.php" />
+	<parameter name="validUsername" value="onchari1010@gmail.com" />
+	<parameter name="validPassword" value="28328719" />
+	<parameter name="incorrectUsername" value="onchari101000@gmail.com" />
+	
+        <classes>
+            <class name="LoginFormTest"/>
+        </classes>
+        <parameter name="invalidPassword" value="28328719445"></parameter>
+    </test>
+    
+</suite>
