@@ -49,12 +49,18 @@ public class ClothesPages extends Page{
        return Utils.waitForElementPresence(driver, By.xpath("//div[@id=\'center_column\']/ul/li["+ elementLevel + "]"), Constants.WAIT_INTERVAL);
     }
 
+
+
     public WebElement getCasualDressProduct() {
         return Utils.waitForElementPresence(driver,byCasualDressProductLocator,Constants.WAIT_INTERVAL);
     }
 
     public WebElement getEveningDressProduct() {
         return Utils.waitForElementPresence(driver, byEveningDressProductLocator, Constants.WAIT_INTERVAL);
+    }
+
+    public WebElement getEveningDressProduct(int elementLevel) {
+        return Utils.waitForElementPresence(driver, By.xpath("//*[@id=\"center_column\"]/ul/li[" + elementLevel + "]"), 30);
     }
 
     public List<WebElement> getDressesCount(){

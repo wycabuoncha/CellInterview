@@ -48,7 +48,4 @@ public void getAllEveningDressProductDisplayed(){
         Assert.assertTrue(clothes.getEveningDressProduct().isDisplayed());
 }
 
-
-
-
 }
