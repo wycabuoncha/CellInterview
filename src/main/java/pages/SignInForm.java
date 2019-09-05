@@ -34,6 +34,7 @@ public class SignInForm extends Page{
 	//get login form
 	private By loginFormBy = By.xpath("//form[@id=\"login_form\"]") ;
 	private By bySignInEmailSelector = By.xpath("//input[@id=\"email\"]");
+	private By byPasswordselector = By.xpath("//input[@id=\"passwd\"]");
 	
 
 //--------GETTERS------------------------------
@@ -42,14 +43,12 @@ public class SignInForm extends Page{
 	}
 
 
-	public WebElement getSignInPasswordField() {
-		// TODO Auto-generated method stub
-		return null;
-	}
-
-
 	public WebElement getSignInEmailField() {
 		return Utils.waitForElementPresence(driver, bySignInEmailSelector , Constants.WAIT_INTERVAL);
+	}
+	
+	public WebElement getSignInPasswordField() {
+		return Utils.waitForElementPresence(driver, byPasswordselector , Constants.WAIT_INTERVAL);
 	}
 
 
