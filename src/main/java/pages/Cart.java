@@ -9,8 +9,12 @@ import java.util.BitSet;
 import java.util.List;
 
 public class Cart extends  Page{
-    private By byCartTabLocator = By.xpath("//b[contains(text(), \"Cart\")]/..");
-
+   
+    private By byCartTabLocator = By.xpath("//b[contains(text(),\"Cart\")]" );                             
+	private By summaryTableByLocator = By.id("cart_summary") ;
+	private String xpathExpression = "//a[@id=\"button_order_cart\"]/span[contains(text(),\"Check out\")]"; 
+	private By checkOutBtnBy  = By.xpath(xpathExpression );
+	
     //get cart tab
 
     //get cart being empty
@@ -24,6 +28,7 @@ public class Cart extends  Page{
     {
        return driver.findElements(By.xpath("//dt"));
     }
+    
 
     public WebElement getCartTab() {
         return Utils.waitForElementPresence(driver, byCartTabLocator , Constants.WAIT_INTERVAL);
@@ -44,6 +49,16 @@ public class Cart extends  Page{
     public WebElement getCartTotalPrice() {
         return Utils.waitForElementPresence(driver, By.xpath("//div[@class=\"cart-prices\"]//span[contains(.,\"$2.00\")]"), Constants.WAIT_INTERVAL);
     }
+
+	public WebElement getCartTabCheckoutBtn() {
+		String xpatString = ".//a[@id=\"button_order_cart\"]/span[contains(text(),\"Check out\")]";
+		return Utils.waitToBeClickable(driver, By.xpath(xpatString), Constants.WAIT_INTERVAL);
+	}
+	
+
+	public WebElement getCartSummaryTable() {
+		return Utils.waitForElementPresence(driver, summaryTableByLocator, Constants.WAIT_INTERVAL);
+	}
 
     //get cart product price
 

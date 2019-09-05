@@ -25,6 +25,8 @@ public class BaseTest {
     static Actions action;
     static ShoppingActions shoppingCartAction;
     static Cart cart;
+    static CartSummary summary;
+    static SignInForm signInForm; 
 
     private static final String APP_URL = "http://automationpractice.com/index.php";
 
@@ -47,6 +49,8 @@ public class BaseTest {
         action = new Actions(webDriver);
         shoppingCartAction = new ShoppingActions();
         cart = new Cart();
+        summary = new CartSummary();
+        signInForm = new SignInForm();
 
     }
 

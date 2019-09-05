@@ -1,4 +1,5 @@
 import org.testng.Assert;
+import org.testng.annotations.DataProvider;
 import org.testng.annotations.Test;
 import pages.LoggedInPage;
 import utils.Constants;
@@ -34,6 +35,7 @@ public class CreateAccountFormTest extends BaseTest {
         Assert.assertTrue(createAccount_SignIn.getEmailErrorMessage().isDisplayed());
     }
 
+    
 
     //Wrong email format
     @Test(priority = 4)
@@ -55,6 +57,7 @@ public class CreateAccountFormTest extends BaseTest {
     }
 
 
+    @DataProvider(name = "signUpForm")
     @Test(priority = 6 )
     public void createAccountFormSuccessfully(){
         System.out.println("Fill in Registration information ...");

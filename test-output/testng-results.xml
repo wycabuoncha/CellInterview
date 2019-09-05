@@ -1,85 +1,53 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testng-results ignored="0" total="7" passed="7" failed="0" skipped="0">
+<testng-results ignored="0" total="8" passed="8" failed="0" skipped="0">
   <reporter-output>
   </reporter-output>
-  <suite started-at="2019-08-28T12:02:02Z" name="Authentication" finished-at="2019-08-28T12:02:33Z" duration-ms="30493">
+  <suite started-at="2019-09-05T12:39:02Z" name="Default suite" finished-at="2019-09-05T12:39:43Z" duration-ms="40605">
     <groups>
     </groups>
-    <test started-at="2019-08-28T12:02:02Z" name="Test1" finished-at="2019-08-28T12:02:33Z" duration-ms="30493">
-      <class name="LoginFormTest">
-        <test-method is-config="true" signature="launchApplication()[pri:0, instance:LoginFormTest@2bfb583b]" started-at="2019-08-28T12:02:02Z" name="launchApplication" finished-at="2019-08-28T12:02:19Z" duration-ms="16695" status="PASS">
+    <test started-at="2019-09-05T12:39:02Z" name="Default test" finished-at="2019-09-05T12:39:43Z" duration-ms="40605">
+      <class name="AddClothesToCartTest">
+        <test-method is-config="true" signature="launchApplication()[pri:0, instance:AddClothesToCartTest@add0edd]" started-at="2019-09-05T12:39:02Z" name="launchApplication" finished-at="2019-09-05T12:39:19Z" duration-ms="16499" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- launchApplication -->
-        <test-method signature="allRequiredElementsAreDisplayed()[pri:1, instance:LoginFormTest@2bfb583b]" started-at="2019-08-28T12:02:19Z" name="allRequiredElementsAreDisplayed" finished-at="2019-08-28T12:02:21Z" duration-ms="2279" status="PASS">
+        <test-method signature="Add_Summer_Dress_To_Cart()[pri:1, instance:AddClothesToCartTest@add0edd]" started-at="2019-09-05T12:39:19Z" name="Add_Summer_Dress_To_Cart" finished-at="2019-09-05T12:39:24Z" duration-ms="4906" status="PASS">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- allRequiredElementsAreDisplayed -->
-        <test-method signature="loginWithValidCredentials(java.lang.String, java.lang.String)[pri:2, instance:LoginFormTest@2bfb583b]" started-at="2019-08-28T12:02:21Z" name="loginWithValidCredentials" finished-at="2019-08-28T12:02:25Z" duration-ms="3906" status="PASS">
-          <params>
-            <param index="0">
-              <value>
-                <![CDATA[onchari1010@gmail.com]]>
-              </value>
-            </param>
-            <param index="1">
-              <value>
-                <![CDATA[28328719]]>
-              </value>
-            </param>
-          </params>
+        </test-method> <!-- Add_Summer_Dress_To_Cart -->
+        <test-method signature="Add_Casual_Dress_To_Cart()[pri:2, instance:AddClothesToCartTest@add0edd]" started-at="2019-09-05T12:39:24Z" name="Add_Casual_Dress_To_Cart" finished-at="2019-09-05T12:39:27Z" duration-ms="3771" status="PASS">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- loginWithValidCredentials -->
-        <test-method signature="loginWith_Incorrect_Username(java.lang.String, java.lang.String)[pri:3, instance:LoginFormTest@2bfb583b]" started-at="2019-08-28T12:02:25Z" name="loginWith_Incorrect_Username" finished-at="2019-08-28T12:02:26Z" duration-ms="1432" status="PASS">
-          <params>
-            <param index="0">
-              <value>
-                <![CDATA[onchari101000@gmail.com]]>
-              </value>
-            </param>
-            <param index="1">
-              <value>
-                <![CDATA[28328719]]>
-              </value>
-            </param>
-          </params>
+        </test-method> <!-- Add_Casual_Dress_To_Cart -->
+        <test-method signature="Add_Evening_Dress_To_Cart()[pri:3, instance:AddClothesToCartTest@add0edd]" started-at="2019-09-05T12:39:27Z" name="Add_Evening_Dress_To_Cart" finished-at="2019-09-05T12:39:31Z" duration-ms="3958" status="PASS">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- loginWith_Incorrect_Username -->
-        <test-method signature="loginWith_Incorrect_PassWord(java.lang.String, java.lang.String)[pri:4, instance:LoginFormTest@2bfb583b]" started-at="2019-08-28T12:02:26Z" name="loginWith_Incorrect_PassWord" finished-at="2019-08-28T12:02:28Z" duration-ms="1313" status="PASS">
-          <params>
-            <param index="0">
-              <value>
-                <![CDATA[onchari1010@gmail.com]]>
-              </value>
-            </param>
-            <param index="1">
-              <value>
-                <![CDATA[28328719445]]>
-              </value>
-            </param>
-          </params>
+        </test-method> <!-- Add_Evening_Dress_To_Cart -->
+        <test-method signature="deleteItemsFromCart()[pri:4, instance:AddClothesToCartTest@add0edd]" started-at="2019-09-05T12:39:31Z" name="deleteItemsFromCart" finished-at="2019-09-05T12:39:35Z" duration-ms="3854" status="PASS">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- loginWith_Incorrect_PassWord -->
-        <test-method signature="loginWith_Invalid_Email_Address()[pri:5, instance:LoginFormTest@2bfb583b]" started-at="2019-08-28T12:02:28Z" name="loginWith_Invalid_Email_Address" finished-at="2019-08-28T12:02:29Z" duration-ms="1288" status="PASS">
+        </test-method> <!-- deleteItemsFromCart -->
+        <test-method signature="checkingCartProductsQtyAndPrice()[pri:5, instance:AddClothesToCartTest@add0edd]" started-at="2019-09-05T12:39:35Z" name="checkingCartProductsQtyAndPrice" finished-at="2019-09-05T12:39:37Z" duration-ms="2298" status="PASS">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- loginWith_Invalid_Email_Address -->
-        <test-method signature="loginWith_Blank_EmailAddress()[pri:6, instance:LoginFormTest@2bfb583b]" started-at="2019-08-28T12:02:29Z" name="loginWith_Blank_EmailAddress" finished-at="2019-08-28T12:02:31Z" duration-ms="1446" status="PASS">
+        </test-method> <!-- checkingCartProductsQtyAndPrice -->
+        <test-method signature="continueToShoppingSummary()[pri:6, instance:AddClothesToCartTest@add0edd]" started-at="2019-09-05T12:39:37Z" name="continueToShoppingSummary" finished-at="2019-09-05T12:39:40Z" duration-ms="2220" status="PASS">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- loginWith_Blank_EmailAddress -->
-        <test-method signature="loginWith_Blank_Password()[pri:7, instance:LoginFormTest@2bfb583b]" started-at="2019-08-28T12:02:31Z" name="loginWith_Blank_Password" finished-at="2019-08-28T12:02:32Z" duration-ms="1504" status="PASS">
+        </test-method> <!-- continueToShoppingSummary -->
+        <test-method signature="check_out_btn()[pri:7, instance:AddClothesToCartTest@add0edd]" started-at="2019-09-05T12:39:40Z" name="check_out_btn" finished-at="2019-09-05T12:39:42Z" duration-ms="2452" status="PASS">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- loginWith_Blank_Password -->
-        <test-method is-config="true" signature="close_All()[pri:0, instance:LoginFormTest@2bfb583b]" started-at="2019-08-28T12:02:32Z" name="close_All" finished-at="2019-08-28T12:02:33Z" duration-ms="596" status="PASS">
+        </test-method> <!-- check_out_btn -->
+        <test-method signature="signInRequest()[pri:8, instance:AddClothesToCartTest@add0edd]" started-at="2019-09-05T12:39:42Z" name="signInRequest" finished-at="2019-09-05T12:39:42Z" duration-ms="36" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- signInRequest -->
+        <test-method is-config="true" signature="close_All()[pri:0, instance:AddClothesToCartTest@add0edd]" started-at="2019-09-05T12:39:42Z" name="close_All" finished-at="2019-09-05T12:39:43Z" duration-ms="582" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- close_All -->
-      </class> <!-- LoginFormTest -->
-    </test> <!-- Test1 -->
-  </suite> <!-- Authentication -->
+      </class> <!-- AddClothesToCartTest -->
+    </test> <!-- Default test -->
+  </suite> <!-- Default suite -->
 </testng-results>

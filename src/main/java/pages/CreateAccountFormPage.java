@@ -14,7 +14,6 @@ public class CreateAccountFormPage extends Page {
 
     //By Web element locators
 
-
    private By invalidEmail = By.cssSelector("ol > li");
    private By customerFirstname = By.id("customer_firstname");
    private By lName = By.id("customer_lastname");

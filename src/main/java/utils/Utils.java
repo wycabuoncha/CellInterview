@@ -22,7 +22,6 @@ public class Utils extends Page {
 
 
 
-
     public static String getTextBoxValue(By by){
         return driver.findElement(by).getAttribute("value");
     }
