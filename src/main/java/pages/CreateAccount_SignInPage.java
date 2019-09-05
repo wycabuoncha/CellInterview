@@ -11,7 +11,7 @@ public class CreateAccount_SignInPage extends Page {
     private By accountBtn = By.cssSelector("#SubmitCreate > span");
     private By formError = By.xpath("//div[@class=\"form-group form-error\"]");
     private By formOk =    By.xpath("//div[@class=\"form-group form-ok\"]");
-    private By loginForm;
+   
     private By loginEmailAddres  = By.id("email");
     private By loginPassword = By.id("passwd");
     private By submitBtn = By.cssSelector("#SubmitLogin > span");
@@ -22,6 +22,7 @@ public class CreateAccount_SignInPage extends Page {
     public WebElement checkIfCreateAccountFormIsDisplayed() {
         return Utils.waitForElementPresence(driver, createAccountForm, 30);
     }
+    
 
     //get email address field
     public WebElement getEmailAddressField(){

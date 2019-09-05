@@ -110,8 +110,11 @@ public class AddClothesToCartTest extends BaseTest {
     }
     
     @Test(priority = 8)
-    public void signInRequest() {
+    public void signInRequest_Check() {
     	Assert.assertTrue(signInForm.getLoginForm().isDisplayed(), "Failed to display Sign in form");
+    	Assert.assertTrue(signInForm.getSignInEmailField().isDisplayed(), "Failed to get sign in email displayed");
+    	Assert.assertTrue(signInForm.getSignInPasswordField().isDisplayed(), "Failed to get sign in password displayed");
+    	Assert.assertTrue(signInForm.getSignBtn().isDisplayed(), "Failed to get sign in button displayed");
     }
     
     

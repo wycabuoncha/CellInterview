@@ -10,8 +10,8 @@ import utils.Utils;
  * -----------------------------------------------------------
  * 				To do list
  * -------------------------------------------------------------
- *  1. get sign in form
- *  2. get sign in email field
+ *  1. get sign in form - 
+ *  2. get sign in email field - $x("//input[@id='email']") - "//input[@id=\"email\"]"
  *  3. get sign in password field
  *  4. get sign in btn
  *  
@@ -31,12 +31,90 @@ import utils.Utils;
  */
 public class SignInForm extends Page{
 
+	//get login form
 	private By loginFormBy = By.xpath("//form[@id=\"login_form\"]") ;
+	private By bySignInEmailSelector = By.xpath("//input[@id=\"email\"]");
 	
 
+//--------GETTERS------------------------------
 	public WebElement getLoginForm() {
 		return Utils.waitForElementPresence(driver, loginFormBy , Constants.WAIT_INTERVAL);
 	}
+
+
+	public WebElement getSignInPasswordField() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+
+	public WebElement getSignInEmailField() {
+		return Utils.waitForElementPresence(driver, bySignInEmailSelector , Constants.WAIT_INTERVAL);
+	}
+
+
+	public WebElement getSignBtn() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+	
+//get email highlighted green
+	public WebElement getEmailHighlightedGreen() {
+		return null;
+	}
+	
+//get email highlighted red
+	public WebElement getEmailHighlightedRed() {
+		return null;
+	}
+	
+//get forget password link
+	public WebElement getForgetPasswordLink() {
+		return null;
+	}
+	
+//-----------SETTERS----------------------------
+	public WebElement setSignInPasswordField() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+
+	public WebElement setSignInEmailField() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	
+	
+	
+//----------------ERRORS-------------------------
+//get An email address required error
+	public WebElement getEmaiAddressRequiredErrorMessage() {
+		return null;
+	}
+	
+//get Invalid email address error
+	public WebElement getInvalidEmailAddressErrorMessage() {
+		return null;
+	}
+//get Password is required error
+	public WebElement getPasswordIsRequiredErrorMessage() {
+		return null;
+	}
+	
+//get Invalid password error
+	public WebElement getInvalidPasswordErrorMessage() {
+		return null;
+	}
+	
+//get Authentication failed.
+	public WebElement getAuthenticationFailedErrorMessage() {
+		return null;
+	}
+	
+	
+	
 	
 	
 }
