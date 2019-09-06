@@ -35,7 +35,13 @@ public class SignInForm extends Page{
 	private By loginFormBy = By.xpath("//form[@id=\"login_form\"]") ;
 	private By bySignInEmailSelector = By.xpath("//input[@id=\"email\"]");
 	private By byPasswordselector = By.xpath("//input[@id=\"passwd\"]");
-	
+	private By byBtnLoginSelector = By.xpath("//button[@id=\"SubmitLogin\"]");
+	private By byEMailOkselector = By.xpath("//div[@class=\"form-group form-ok\"]/input[@id=\"email\"]");
+	private By byEmailErrorselectorBy = By.xpath("//div[@class=\"form-group form-error\"]/input[@id=\"email\"]");
+	private By passwordForgetLinkBy = By.xpath("//a[@title=\\\"Recover your forgotten password\\\"]\"");
+	private By emailAddressRequiredErrorBy = By.xpath("//li[contains(text(),\"An email address required.\")]");
+	private By invalidEmailAddressBy = By.xpath("//li[contains(text(),\"Invalid email address.\")]");
+	private By passwordIsRequiredBy = By.xpath("//li[contains(text(), \"Password is required.\")]");
 
 //--------GETTERS------------------------------
 	public WebElement getLoginForm() {
@@ -54,34 +60,34 @@ public class SignInForm extends Page{
 
 	public WebElement getSignBtn() {
 		// TODO Auto-generated method stub
-		return null;
+		return Utils.waitToBeClickable(driver, byBtnLoginSelector, Constants.WAIT_INTERVAL);
 	}
 	
 //get email highlighted green
 	public WebElement getEmailHighlightedGreen() {
-		return null;
+		return Utils.waitForElementPresence(driver, byEMailOkselector, Constants.WAIT_INTERVAL);
 	}
 	
 //get email highlighted red
 	public WebElement getEmailHighlightedRed() {
-		return null;
+		return Utils.waitForElementPresence(driver, byEmailErrorselectorBy, Constants.WAIT_INTERVAL);
 	}
 	
 //get forget password link
 	public WebElement getForgetPasswordLink() {
-		return null;
+		return Utils.waitForElementPresence(driver, passwordForgetLinkBy, Constants.WAIT_INTERVAL);
 	}
 	
 //-----------SETTERS----------------------------
-	public WebElement setSignInPasswordField() {
-		// TODO Auto-generated method stub
-		return null;
+	public void setSignInPasswordField(String password) {
+		getSignInPasswordField().clear();
+		getSignInPasswordField().sendKeys(password);
 	}
 
 
-	public WebElement setSignInEmailField() {
-		// TODO Auto-generated method stub
-		return null;
+	public void setSignInEmailField(String email) {
+		getSignInEmailField().clear();
+		getSignInEmailField().sendKeys(email);
 	}
 
 	
@@ -90,12 +96,12 @@ public class SignInForm extends Page{
 //----------------ERRORS-------------------------
 //get An email address required error
 	public WebElement getEmaiAddressRequiredErrorMessage() {
-		return null;
+		return Utils.waitForElementPresence(driver, emailAddressRequiredErrorBy, Constants.WAIT_INTERVAL);
 	}
 	
 //get Invalid email address error
 	public WebElement getInvalidEmailAddressErrorMessage() {
-		return null;
+		return Utils.waitForElementPresence(driver, invalidEmailAddressBy, Constants.WAIT_INTERVAL);
 	}
 //get Password is required error
 	public WebElement getPasswordIsRequiredErrorMessage() {
