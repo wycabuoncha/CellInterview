@@ -42,7 +42,9 @@ public class LoginForm extends Page{
 	private By emailAddressRequiredErrorBy = By.xpath("//li[contains(text(),\"An email address required.\")]");
 	private By invalidEmailAddressBy = By.xpath("//li[contains(text(),\"Invalid email address.\")]");
 	private By passwordIsRequiredBy = By.xpath("//li[contains(text(), \"Password is required.\")]");
-
+	private By invalidPasswordBy = By.xpath("//li[contains(text(), \"Invalid password.\")]");
+	private By authenticationErrorBy = By.xpath("//li[contains(text(),\"Authentication failed.\")]");
+	
 //--------GETTERS------------------------------
 	public WebElement getLoginForm() {
 		return Utils.waitForElementPresence(driver, loginFormBy , Constants.WAIT_INTERVAL);
@@ -105,25 +107,17 @@ public class LoginForm extends Page{
 	}
 //get Password is required error
 	public WebElement getPasswordIsRequiredErrorMessage() {
-		
-		return null;
+		return Utils.waitForElementPresence(driver, passwordIsRequiredBy, Constants.WAIT_INTERVAL);
 	}
 	
 //get Invalid password error
 	public WebElement getInvalidPasswordErrorMessage() {
-		return null;
+		return Utils.waitForElementPresence(driver, invalidPasswordBy, Constants.WAIT_INTERVAL);
 	}
 	
 //get Authentication failed.
 	public WebElement getAuthenticationFailedErrorMessage() {
-		return null;
+		return Utils.waitForElementPresence(driver, authenticationErrorBy , Constants.WAIT_INTERVAL);
 		
 	}
-
-
-	
-	
-	
-	
-	
 }
