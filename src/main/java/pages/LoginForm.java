@@ -29,7 +29,7 @@ import utils.Utils;
  *  13. get email highlighted red
  *  14. get forget password link
  */
-public class SignInForm extends Page{
+public class LoginForm extends Page{
 
 	//get login form
 	private By loginFormBy = By.xpath("//form[@id=\"login_form\"]") ;
@@ -49,16 +49,16 @@ public class SignInForm extends Page{
 	}
 
 
-	public WebElement getSignInEmailField() {
+	public WebElement getLoginEmailField() {
 		return Utils.waitForElementPresence(driver, bySignInEmailSelector , Constants.WAIT_INTERVAL);
 	}
 	
-	public WebElement getSignInPasswordField() {
+	public WebElement getLoginPasswordField() {
 		return Utils.waitForElementPresence(driver, byPasswordselector , Constants.WAIT_INTERVAL);
 	}
 
 
-	public WebElement getSignBtn() {
+	public WebElement getLoginBtn() {
 		// TODO Auto-generated method stub
 		return Utils.waitToBeClickable(driver, byBtnLoginSelector, Constants.WAIT_INTERVAL);
 	}
@@ -79,15 +79,15 @@ public class SignInForm extends Page{
 	}
 	
 //-----------SETTERS----------------------------
-	public void setSignInPasswordField(String password) {
-		getSignInPasswordField().clear();
-		getSignInPasswordField().sendKeys(password);
+	public void setLoginPasswordField(String password) {
+		getLoginPasswordField().clear();
+		getLoginPasswordField().sendKeys(password);
 	}
 
 
-	public void setSignInEmailField(String email) {
-		getSignInEmailField().clear();
-		getSignInEmailField().sendKeys(email);
+	public void setLoginInEmailField(String email) {
+		getLoginEmailField().clear();
+		getLoginEmailField().sendKeys(email);
 	}
 
 	
@@ -105,6 +105,7 @@ public class SignInForm extends Page{
 	}
 //get Password is required error
 	public WebElement getPasswordIsRequiredErrorMessage() {
+		
 		return null;
 	}
 	
@@ -116,7 +117,10 @@ public class SignInForm extends Page{
 //get Authentication failed.
 	public WebElement getAuthenticationFailedErrorMessage() {
 		return null;
+		
 	}
+
+
 	
 	
 	

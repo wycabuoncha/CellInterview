@@ -11,4 +11,5 @@ public class Constants {
     public static final String BLANK_FIELD_TEXT  = "" ;
     public static final int WAIT_INTERVAL = 30;
     public static final String EXISTING_EMAIL_TEXT = "An account using this email address has already been registered. Please enter a valid password or request a new one.";
+	public static final String HomeTitle = "My";
 }

@@ -1,18 +1,22 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
 <suite name="Failed suite [Authentication]">
-  <test thread-count="5" name="Test1(failed)">
+  <test thread-count="5" name="LoginTest(failed)">
+    <parameter name="correctUsername" value="test1@automationpractice.com"/>
     <parameter name="baseUrl" value="http://automationpractice.com/index.php"/>
-    <parameter name="validPassword" value="28328719"/>
-    <parameter name="validUsername" value="onchari101@gmail.com"/>
+    <parameter name="invalidUsername" value="automationpractice.com"/>
+    <parameter name="correctPassword" value="28328719@Aut?!"/>
+    <parameter name="inCorrectPassword" value="243544657@efg"/>
     <classes>
       <class name="LoginFormTest">
         <methods>
-          <include name="loginWithValidCredentials"/>
+          <include name="login_With_Valid_Email_Address_Invalid_Password" invocation-numbers="0"/>
+          <include name="check_If_all_Required_Elements_Are_Displayed"/>
+          <include name="login_With_Correct_Credentials" invocation-numbers="0"/>
           <include name="launchApplication"/>
           <include name="close_All"/>
         </methods>
       </class> <!-- LoginFormTest -->
     </classes>
-  </test> <!-- Test1(failed) -->
+  </test> <!-- LoginTest(failed) -->
 </suite> <!-- Failed suite [Authentication] -->

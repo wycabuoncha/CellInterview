@@ -16,6 +16,7 @@ public class CreateAccount_SignInPage extends Page {
     private By loginPassword = By.id("passwd");
     private By submitBtn = By.cssSelector("#SubmitLogin > span");
     private By authenticationFail = By.xpath("//li[contains(text(), \"Authentication failed.\")]");
+	private By loginFormBy = By.xpath("//form[@id=\"login_form\"]") ;
 
 
     //Check if create account form is displayed
@@ -60,7 +61,7 @@ public class CreateAccount_SignInPage extends Page {
 
     //get login form displayed
     public WebElement getLoginFormIsDisplayed() {
-        return Utils.waitForElementPresence(driver, loginForm, Constants.WAIT_INTERVAL);
+        return Utils.waitForElementPresence(driver, loginFormBy, Constants.WAIT_INTERVAL);
     }
 
     //get login email displayed

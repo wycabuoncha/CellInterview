@@ -19,6 +19,11 @@ public class Utils extends Page {
         return  (new WebDriverWait(driver, waitInterval)).until(ExpectedConditions.presenceOfElementLocated(selector));
 
     }
+    
+    public static void waitForTitle(WebDriver webDriver, int timeOutInSeconds, String text) {
+		WebDriverWait wait = new WebDriverWait(webDriver, timeOutInSeconds);
+		wait.until(ExpectedConditions.titleContains(text));
+	}
 
 
 
