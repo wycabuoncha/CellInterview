@@ -6,6 +6,8 @@
 	<parameter name="correctUsername" value="test1@automationpractice.com" />
 	<parameter name="correctPassword" value="28328719@Aut?!" />
 	<parameter name="invalidUsername" value="automationpractice.com" />
+	<parameter name="invalidPassword" value="32408508e0ttu"/>
+	<parameter name="invalidEmail" value ="test212@automationpractice.com" />
 	<parameter name="inCorrectPassword" value="243544657@efg"/>
 	
 	

@@ -81,6 +81,18 @@ import com.beust.jcommander.Parameter;
         
         
         //attempt to login with invalid username, invalid password - onchari, 2323333554657575
+        @Test(dependsOnMethods = {"check_If_all_Required_Elements_Are_Displayed"})
+        @Parameters({"invalidEmail", "invalidPassword"})
+        public void attempt_To_Login_with_Invalid_Credentials(String invalidEmail, String invalidPassword) {
+			loginFormObject.getLoginEmailField().clear();
+			loginFormObject.getLoginPasswordField().clear();
+			
+			loginFormObject.setLoginInEmailField(invalidEmail);
+			loginFormObject.setLoginPasswordField(invalidPassword);
+			loginFormObject.getLoginBtn().click();
+			
+        	Assert.assertTrue(loginFormObject.getAuthenticationFailedErrorMessage().isDisplayed(), "Auntentication failed error failed to appear");
+		}
         //attempt to login with blank username, blank password - "", ""
         //attempt to login with blank username, filled password - "", 28328719
         //attempt to login with filled username , blank password onchari101@gmail.com
