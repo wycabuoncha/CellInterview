@@ -29,9 +29,9 @@ import utils.Utils;
  *  13. get email highlighted red
  *  14. get forget password link
  */
-public class LoginForm extends Page{
+public class LoginFormPage extends Page{
 
-	//get login form
+	//element locators of the web elements on this page
 	private By loginFormBy = By.xpath("//form[@id=\"login_form\"]") ;
 	private By bySignInEmailSelector = By.xpath("//input[@id=\"email\"]");
 	private By byPasswordselector = By.xpath("//input[@id=\"passwd\"]");
@@ -92,8 +92,7 @@ public class LoginForm extends Page{
 		getLoginEmailField().sendKeys(email);
 	}
 
-	
-	
+
 	
 //----------------ERRORS-------------------------
 //get An email address required error
@@ -119,5 +118,15 @@ public class LoginForm extends Page{
 	public WebElement getAuthenticationFailedErrorMessage() {
 		return Utils.waitForElementPresence(driver, authenticationErrorBy , Constants.WAIT_INTERVAL);
 		
+	}
+	
+	
+	//this method allows you to log into your account providing that you have credentials
+	public void login(String email, String password) {
+		this.getLoginEmailField().clear();
+		this.getLoginPasswordField().clear();
+		this.setLoginInEmailField(email);
+		this.setLoginPasswordField(password);
+		this.getLoginBtn().click();
 	}
 }

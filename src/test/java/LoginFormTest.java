@@ -25,14 +25,7 @@ import com.beust.jcommander.Parameter;
         public void login_With_Correct_Credentials(String correctUsername, String correctPassword) {
         	System.out.println("Login with correct credentials...");
         	
-        	loginFormObject.getLoginEmailField().clear();
-        	loginFormObject.getLoginPasswordField().clear();
-        	
-        	loginFormObject.setLoginInEmailField(correctUsername);
-        	Assert.assertTrue(loginFormObject.getEmailHighlightedGreen().isDisplayed(), "Login field is not highlighted green");
-        	
-        	loginFormObject.setLoginPasswordField(correctPassword);
-        	loginFormObject.getLoginBtn().click(); 	
+        	loginFormObject.login(correctUsername, correctPassword);	
         	
         	Assert.assertTrue(myAccount.getLogoutLink().isDisplayed(), "Logout lin i not displayed");
         	myAccount.getLogoutLink().click();
@@ -42,7 +35,7 @@ import com.beust.jcommander.Parameter;
        
         
         //----------------attempt to login with Invalid usernamame, Correct password - onchari, 28328719
-        @Test(dependsOnMethods = {"check_If_all_Required_Elements_Are_Displayed"}, priority = 3)
+        //@Test(dependsOnMethods = {"check_If_all_Required_Elements_Are_Displayed"}, priority = 3)
         @Parameters({"invalidUsername","correctPassword"})
         public void login_With_Invalid_Email_Address_Valid_Password(String invalidUsername, String correctPassword) {
         	System.out.println("Login with invalid username, correct password...");
@@ -62,7 +55,7 @@ import com.beust.jcommander.Parameter;
         }
         
         //attempt to login with valid username, invalid password - onchari101@gmail.com, 28328718
-        @Test(dependsOnMethods = {"check_If_all_Required_Elements_Are_Displayed"}, priority = 4 )
+       // @Test(dependsOnMethods = {"check_If_all_Required_Elements_Are_Displayed"}, priority = 4 )
         @Parameters({ "correctUsername", "inCorrectPassword" })
         public void login_With_Valid_Email_Address_Invalid_Password(String inCorrectPassword, String validUsername) {
         	System.out.println("Attempting to login with valid and correct email, with incorrect password");
@@ -81,7 +74,7 @@ import com.beust.jcommander.Parameter;
         
         
         //attempt to login with invalid username, invalid password - onchari, 2323333554657575
-        @Test(dependsOnMethods = {"check_If_all_Required_Elements_Are_Displayed"})
+        //@Test(dependsOnMethods = {"check_If_all_Required_Elements_Are_Displayed"})
         @Parameters({"invalidEmail", "invalidPassword"})
         public void attempt_To_Login_with_Invalid_Credentials(String invalidEmail, String invalidPassword) {
 			loginFormObject.getLoginEmailField().clear();

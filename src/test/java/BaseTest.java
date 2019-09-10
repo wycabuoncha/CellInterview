@@ -26,7 +26,7 @@ public class BaseTest {
     static ShoppingActions shoppingCartAction;
     static Cart cart;
     static CartSummary summary;
-    static LoginForm loginFormObject; 
+    static LoginFormPage loginFormObject; 
     static MyAccount myAccount;
 
     private static final String APP_URL = "http://automationpractice.com/index.php";
@@ -51,7 +51,7 @@ public class BaseTest {
         shoppingCartAction = new ShoppingActions();
         cart = new Cart();
         summary = new CartSummary();
-        loginFormObject = new LoginForm();
+        loginFormObject = new LoginFormPage();
         myAccount = new MyAccount();
 
     }

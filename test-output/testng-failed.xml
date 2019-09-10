@@ -6,11 +6,12 @@
     <parameter name="baseUrl" value="http://automationpractice.com/index.php"/>
     <parameter name="invalidUsername" value="automationpractice.com"/>
     <parameter name="correctPassword" value="28328719@Aut?!"/>
+    <parameter name="invalidPassword" value="32408508e0ttu"/>
     <parameter name="inCorrectPassword" value="243544657@efg"/>
+    <parameter name="invalidEmail" value="test212@automationpractice.com"/>
     <classes>
       <class name="LoginFormTest">
         <methods>
-          <include name="login_With_Valid_Email_Address_Invalid_Password" invocation-numbers="0"/>
           <include name="check_If_all_Required_Elements_Are_Displayed"/>
           <include name="login_With_Correct_Credentials" invocation-numbers="0"/>
           <include name="launchApplication"/>
